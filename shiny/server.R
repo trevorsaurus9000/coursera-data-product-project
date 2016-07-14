@@ -1,10 +1,8 @@
 library(UsingR)
 library(rgdal)
 
-setwd("C:/THARRIS/Coursera/Data Products/course-project")
-
 # ingest our data
-broomfield.ward.map <- readOGR(dsn = "./data", layer = "broomfield.ward.map")
+broomfield.ward.map <- readOGR(dsn = "../data", layer = "broomfield.ward.map")
 
 shinyServer(  
      function(input, output) 

@@ -3,7 +3,7 @@ setwd("C:/THARRIS/Coursera/Data Products/course-project")
 library(rgdal)
 
 # ingest our data
-broomfield.county.map <- readOGR(dsn = "./data", layer = "Parcels")
+broomfield.county.map <- readOGR(dsn = "../data", layer = "Parcels")
 
 # decide which county ward we want to look at, then filter our data
 broomfield.ward.map <- broomfield.county.map[which(broomfield.county.map$WARD == "WARD-1"),]
