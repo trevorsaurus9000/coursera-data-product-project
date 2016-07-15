@@ -40,10 +40,14 @@ shinyServer(
           output$avg2015SellingPrice <- renderText({
                filteredHomes <- filteredProperties()@data
                soldHomes <- filteredHomes[!is.na(filteredHomes$SALEDATE),]
-               recentlySoldHomes <- soldHomes[soldHomes$SALEDATE == 2015,]
+               recentlySoldHomes <- soldHomes[soldHomes$SALEDATE == "2015",]
+               
+               cat(soldHomes$SALEDATE)
+               cat(str(soldHomes))
+               
                avg2015SellingPrice <- round(mean(recentlySoldHomes$FINALACTUA),0)
                paste("Average selling price for homes sold in 2015: $", avg2015SellingPrice)
+               
           })
-          
      }
 )

@@ -1,9 +1,7 @@
-setwd("C:/THARRIS/Coursera/Data Products/course-project")
-
 library(rgdal)
 
 # ingest our data
-broomfield.county.map <- readOGR(dsn = "../data", layer = "Parcels")
+broomfield.county.map <- readOGR(dsn = "./data", layer = "Parcels")
 
 # decide which county ward we want to look at, then filter our data
 broomfield.ward.map <- broomfield.county.map[which(broomfield.county.map$WARD == "WARD-1"),]
@@ -33,4 +31,4 @@ broomfield.ward.map@data$SALEDATE <- as.numeric(broomfield.ward.map@data$SALEDAT
 broomfield.ward.map <- broomfield.ward.map[,c("OBJECTID","BATHS","BEDROOMS","ACTUALYEAR","FINALACTUA","LIVINGAREA","PROPERTYUS","SALEDATE","SALEPRICE")]
 
 # store our filtered data for later use in the app (because the complete data set takes minutes to load!)
-writeOGR(broomfield.ward.map, "./data", "broomfield.ward.map", driver="ESRI Shapefile")
+writeOGR(broomfield.ward.map, "./shiny", "broomfield.ward.map", driver="ESRI Shapefile")
