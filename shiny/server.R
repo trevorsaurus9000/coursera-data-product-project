@@ -2,7 +2,7 @@ library(UsingR)
 library(rgdal)
 
 # ingest our data
-broomfield.ward.map <- readOGR(dsn = "../data", layer = "broomfield.ward.map")
+broomfield.ward.map <- readOGR(dsn = ".", layer = "broomfield.ward.map")
 
 shinyServer(  
      function(input, output) 
