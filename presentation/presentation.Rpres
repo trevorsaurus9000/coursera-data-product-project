@@ -1,28 +1,54 @@
-presentation
+Property Searching Shiny App
 ========================================================
 author: Trevor Harris
-date: 20170710
+date: `r date()`
+transition: linear
+font-family: 'Courier'
 
-First Slide
+<small>
+Coursera: Data Projects
+Course Project
+</small>
+
+Project Objectives
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+1. Demonstrate the use of Shiny and Rstudio Presentation
+2. Explore shapefiles (read, write, manipulate and plot)
+3. Explore public data pulled off a local government website
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+The Parcels dataset
 ========================================================
 
-```{r}
-summary(cars)
-```
+Data was collected and distributed by the [City and County of Broomfield](http://broomfield.org).
 
-Slide With Plot
+While numerous datasets were available, the [Parcels dataset](http://opendata.broomfield.org/datasets/7116fc2360784cd39e7f199222099027_0) sounded interesting becaused it contained:
+* Coordinates of property boundaries
+* Property details such as liveable space and number of bathrooms
+* County-assessed property values
+* Sales prices
+
+The Parcels dataset
 ========================================================
 
-```{r, echo=FALSE}
-plot(cars)
+To keep Shiny load times down, a subset of the data was created that only included residential properties within a single Ward.  Ward 1 (in <span style="color:red">red</span>) was selected due to its geographic compactness.
+
+***
+
+![](http://extras.mnginteractive.com/live/media/site24/2015/0429/20150429_100809_BroomfieldWardMap2015.jpg)
+
+About the Shiny App
+========================================================
+
+Due to the data available within the chosen dataset, a property searching app seemed natural.  The app would allow users to find one or more properties using one or more property values as inputs.
+
+Since one of the unoffical goals was to learn how to read, write and plot shapefile data, a plot would also be provided that would show the properties relative to one another.
+
+Example Results From Query
+========================================================
+
+```{r, echo = TRUE}
+library(rgdal)
+broomfield.ward.map <- readOGR(dsn = "../shiny", layer = "broomfield.ward.map", verbose=FALSE)
+plot(broomfield.ward.map)
 ```
