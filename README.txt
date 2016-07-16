@@ -22,8 +22,8 @@ Project files of interest:
    ./preprocessing.R - R preprocessing code used to reduce the Parcels.* 
       dataset into something that will load in Shiny within reasonable time period.  The 
       code tidys the data, then writes a subset of it to disk.
-   ./shiny/broomfield.ward.map.* - processed data, consumable (in a timely manner) by Shiny app.
+   ./shiny/broomfield.ward.map.* - processed data to be consumed by Shiny app.
       Covers Broomfield County, Ward 1.
    ./shiny/ui.R - Shiny R code used to create an input pane and an updatable display pane.
    ./shiny/server.R - Shiny R code used to plot the filtered land parcels, 
-      as well as perfom some light calculations based on the filters.
+      as well as perform some light calculations based on the filters.
