@@ -19,6 +19,7 @@ About the data:
 
 Project files of interest:
    ./data/Parcels.* - raw data downloaded from broomfield.org.  Covers Broomfield County.
+      NOT uploaded to Github due to size (>100MB limit)
    ./preprocessing.R - R preprocessing code used to reduce the Parcels.* 
       dataset into something that will load in Shiny within reasonable time period.  The 
       code tidys the data, then writes a subset of it to disk.
