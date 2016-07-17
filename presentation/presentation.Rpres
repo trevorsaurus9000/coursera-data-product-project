@@ -1,21 +1,20 @@
-Property Searching Shiny App
+Property Searching App
 ========================================================
 author: Trevor Harris
-date: `r date()`
+date: July 17th, 2016
 transition: linear
 font-family: 'Courier'
 
 <small>
-Coursera: Data Projects
-Course Project
+Coursera >> Data Projects >> Course Project
 </small>
 
-Project Objectives
-========================================================
-
-1. Demonstrate the use of Shiny and Rstudio Presentation
-2. Explore shapefiles (read, write, manipulate and plot)
-3. Explore public data pulled off a local government website
+<small>
+Objectives:  
+-Demonstrate the use of Shiny and Rstudio Presentation  
+-Explore shapefiles (read, write, manipulate and plot)  
+-Explore public data pulled off a local government website
+</small>
 
 The Parcels dataset
 ========================================================
